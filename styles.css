@@ -1,0 +1,320 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: silver;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+    color: #333;
+}
+
+nav ul li a {
+    text-decoration: underline;
+    color: black;
+    font-size: 16px;
+    padding: 5px 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: gray;
+    border-radius: 4px;
+}
+
+.background {
+    width: 45px;
+    border: 2px solid #333;
+    border-radius: 0;
+    height: auto;
+    margin-left: 10%;
+}
+
+.homeimg {
+    height: 75%;
+    width: 100%;
+}
+
+.project {
+    font-weight: bolder;
+    box-shadow: 10px yellow;
+    padding: 20px;
+}
+
+/* HOME SLIDER */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+    padding-right: 35%;
+    padding-bottom: 0;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    width: auto;
+    justify-content: center;
+    border-radius: 20px;
+    margin-bottom: 0;
+    flex-wrap: wrap; 
+}
+
+.card {
+    position: relative;
+    list-style: none;
+    width: 400px;
+    transition: .3s ease;
+    height: 500px;
+}
+
+.card-background {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(.9) saturate(1) contrast(1);
+    transition: .3s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover .card-background {
+    transform: scale(1.15);
+}
+
+.card-container:hover .card:not(:hover) {
+    transform: scale(.9);
+}
+
+.card-container:hover > .card:not(:hover) .card-background {
+    filter: brightness(.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.content {
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    position: absolute;
+    width: 100%;
+    text-align: left;
+}
+
+button {
+    background-color: #F9C802;
+    border: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 105%;
+    left: 80%;
+    padding: 20px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: black;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: whitesmoke;
+}
+
+footer {
+    bottom: 0;
+    background-color: gray;
+    width: 100%;
+    padding: 1px;
+    text-align: center;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 2px;
+    background-color: transparent;
+    margin: 2px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialIcons a:hover {
+    background-color: gray;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.footerBottom {
+    background-color: gray;
+    padding: 1px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.designer {
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+nav {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    margin-left: auto;
+    
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 5px 0;
+    background-color: gray;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: none;
+    background-color: gray;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    nav {
+        display: none; 
+    }
+
+    .hamburger {
+        display: flex; 
+    }
+
+    .menu {
+        display: none; 
+    }
+
+    .menu.active {
+        display: block;
+        background-color: gray;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        z-index: 100;
+    }    
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        padding: 10px; 
+    }
+
+    .logo {
+        font-size: 20px; 
+    }
+
+    nav ul {
+        flex-direction: column; 
+        padding: 10px 0; 
+    }
+
+    nav ul li {
+        margin-right: 0; 
+        margin-bottom: 10px;
+    }
+
+    .socialIcons {
+        flex-direction: row; 
+        justify-content: center; 
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 16px; 
+    }
+
+   
+    .socialIcons a i {
+        font-size: 1.2em; 
+    }
+}

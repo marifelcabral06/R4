@@ -1,0 +1,388 @@
+/* Global reset and box-sizing */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: silver;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+    color: #333;
+}
+
+nav ul li a {
+    text-decoration: underline;
+    color: black;
+    font-size: 16px;
+    padding: 5px 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: gray;
+    border-radius: 4px;
+}
+
+.background {
+    width: 45px;
+    border: 2px solid #333;
+    border-radius: 0;
+    height: auto;
+    margin-left: 10%;
+}
+
+/* About Section */
+.about {
+    width: 100%;
+    padding: 78px 0;
+    background-color: white;
+}
+
+.about img {
+    height: auto;
+    width: 420px;
+}
+
+.about-text {
+    width: 550px;
+}
+
+.main {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-text h1 {
+    color: black;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.about-text h5 {
+    color: black;
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+span {
+    color: gray;
+    font-weight: 600;
+}
+
+.about-text p {
+    color: black;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+button {
+    background: #F9C802;
+    color: black;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+button:hover {
+    background: whitesmoke;
+}
+
+/* Footer Styles */
+.footer {
+    color: gray;
+}
+
+footer {
+    bottom: 0;
+    background-color: gray;
+    width: 100%;
+    padding: 1px;
+    text-align: center;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 2px;
+    background-color: transparent;
+    margin: 2px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 2em;
+    color: black;
+}
+
+.socialIcons a:hover {
+    background-color: gray;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.footerBottom {
+    background-color: gray;
+    padding: 1px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.designer {
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+    background-color: gray;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: none;
+    background-color: gray;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+
+/* Mobile Styles (Max width: 1024px) */
+@media (max-width: 1024px) {
+    /* Header adjustments */
+    header {
+        padding: 10px; /* Adjust header padding */
+    }
+
+    .logo {
+        font-size: 20px; /* Make the logo smaller on smaller screens */
+    }
+
+    /* Hide regular nav links */
+    nav ul {
+        display: none; /* Hide regular navigation on mobile */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .menu.active {
+        display: block; /* Show the menu when active */
+        background-color: gray;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        z-index: 100;
+        align-items: center; /* Center align items in the menu */
+    }
+
+    .main {
+        flex-direction: column; /* Stack the content vertically */
+        padding: 0 10px; /* Add some padding */
+    }
+
+    /* Make About Section Responsive */
+    .about img {
+        width: 100%; /* Make the image responsive */
+        max-width: 420px; /* Limit maximum width */
+    }
+
+    .about-text {
+        width: 100%; /* Make text responsive */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .about-text h1 {
+        font-size: 40px; /* Reduce heading size */
+    }
+
+    .about-text h5 {
+        font-size: 18px; /* Reduce subheading size */
+    }
+
+    .about-text p {
+        font-size: 16px; /* Reduce paragraph font size */
+        line-height: 24px; /* Adjust line height */
+    }
+
+    /* Footer adjustments */
+    .socialIcons {
+        flex-direction: row; /* Stack social icons vertically */
+    }
+}
+
+/* Very small screens (Max width: 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        padding: 10px; /* Adjust padding */
+    }
+
+    /* Footer */
+    footer {
+        padding: 5px; /* Adjust footer padding */
+    }
+
+    .footerBottom {
+        padding: 5px; /* Adjust bottom footer padding */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+        top: 50px;
+    }
+
+    .socialIcons {
+        flex-direction: row; /* Ensure vertical stacking on small screens */
+        align-items: center; /* Center icons horizontally */
+    }
+
+    .socialIcons a {
+        margin: 5px 0; /* Maintain vertical spacing */
+    }
+
+    .socialIcons a {
+        text-decoration: none;
+        padding: 2px;
+        background-color: transparent;
+        margin: 5px 0; /* Vertical margin for spacing */
+        border-radius: 50%;
+    }
+
+    /* Reduce padding for elements */
+    .about-text h1 {
+        font-size: 36px; /* Reduce heading size */
+    }
+
+    .about-text p {
+        font-size: 14px; /* Reduce paragraph font size */
+    }
+
+    .menu.active {
+        display: block; /* Show the menu when active */
+        background-color: gray;
+        position: absolute;
+        top: 50px; /* Adjust menu position */
+        right: 0;
+        width: 100%;
+        z-index: 100;
+        align-items: center; /* Center align items in the menu */
+    }
+}
+
+/* Extra small screens (Max width: 480px) */
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .logo {
+        font-size: 16px; /* Smaller logo size */
+    }
+
+    .about-text h1 {
+        font-size: 28px; /* Reduce heading size */
+    }
+
+    .about-text p {
+        font-size: 12px; /* Further reduce paragraph font size */
+    }
+
+    button {
+        padding: 10px 20px; /* Reduce button padding */
+    }
+
+    .socialIcons {
+        flex-direction: row; /* Ensure horizontal stacking on small screens */
+    }
+
+    .socialIcons a {
+        margin: 0 5px; /* Maintain horizontal spacing */
+    }
+
+    .socialIcons a {
+        margin: 5px 0; /* Maintain vertical spacing */
+    }
+}
